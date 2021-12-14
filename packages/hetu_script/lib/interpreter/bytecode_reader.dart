@@ -64,14 +64,16 @@ class BytecodeReader {
   int readInt64() {
     final start = ip;
     ip += 8;
-    return bytes.buffer.asByteData().getInt64(start);
+    return bytes.buffer.asByteData().getInt32(start);
+    // return bytes.buffer.asByteData().getInt64(start);
   }
 
   /// Fetch a float64 from the bytes list
   double readFloat64() {
     final start = ip;
     ip += 8;
-    return bytes.buffer.asByteData().getFloat64(start);
+    return bytes.buffer.asByteData().getFloat32(start);
+    // return bytes.buffer.asByteData().getFloat64(start);
   }
 
   /// Fetch a utf8 string from the bytes list
