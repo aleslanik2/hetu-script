@@ -137,10 +137,12 @@ class HTCompiler implements AbstractAstVisitor<Uint8List> {
 
   /// -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
   Uint8List _int64(int value) =>
-      Uint8List(8)..buffer.asByteData().setInt64(0, value, Endian.big);
+      Uint8List(4)..buffer.asByteData().setInt32(0, value, Endian.big);
+  // Uint8List(8)..buffer.asByteData().setInt64(0, value, Endian.big);
 
   Uint8List _float64(double value) =>
-      Uint8List(8)..buffer.asByteData().setFloat64(0, value, Endian.big);
+      Uint8List(4)..buffer.asByteData().setFloat32(0, value, Endian.big);
+  // Uint8List(8)..buffer.asByteData().setFloat64(0, value, Endian.big);
 
   // Uint8List _string(String value) {
   //   final bytesBuilder = BytesBuilder();

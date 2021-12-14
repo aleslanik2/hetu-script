@@ -65,6 +65,7 @@ class BytecodeReader {
     final start = ip;
     ip += 4;
     return bytes.buffer.asByteData().getInt32(start);
+    // ip += 8;
     // return bytes.buffer.asByteData().getInt64(start);
   }
 
@@ -73,6 +74,7 @@ class BytecodeReader {
     final start = ip;
     ip += 4;
     return bytes.buffer.asByteData().getFloat32(start);
+    // ip += 8;
     // return bytes.buffer.asByteData().getFloat64(start);
   }
 
